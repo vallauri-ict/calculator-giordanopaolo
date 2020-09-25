@@ -60,7 +60,7 @@ namespace Es_01_Calculator_Project
             txt.Width = this.Width - 16;
             txt.Height = 50;
             txt.Top = 20;
-            txt.Text = "Hello";
+            txt.Text = "123456789";
             this.Controls.Add(txt);
         }
         private void Makebuttons(strutturabottoni[,] bottoni)
