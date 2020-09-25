@@ -19,12 +19,18 @@ namespace Es_01_Calculator_Project
         {
             public char Content;
             public bool mybool;
-            public strutturabottoni(char Content, bool mybool)
+            public bool IsNumber;
+            public bool issepar;
+            public bool ispls;
+            public strutturabottoni(char Content, bool mybool, bool IsNumber = true, bool issepar = false, bool ispls = false)
             {
                 this.Content = Content;
                 this.mybool = mybool;
+                this.IsNumber = IsNumber;
+                this.issepar = issepar;
+                this.ispls = ispls;
             }
-            public override string ToString()
+        public override string ToString()
             {
                 return Content.ToString();
             }
@@ -32,12 +38,12 @@ namespace Es_01_Calculator_Project
         };
         private strutturabottoni[,] button =
         {
-            {new strutturabottoni('%',false),new strutturabottoni('ɶ',false),new strutturabottoni('c',false),new strutturabottoni('C',false) },
-            {new strutturabottoni(' ',false),new strutturabottoni(' ',false),new strutturabottoni(' ',false),new strutturabottoni('÷',false) },
-            {new strutturabottoni('7',false),new strutturabottoni('8',false),new strutturabottoni('9',false),new strutturabottoni('x',false) },
-            {new strutturabottoni('4',false),new strutturabottoni('5',false),new strutturabottoni('6',false),new strutturabottoni('-',false) },
-            {new strutturabottoni('1',false),new strutturabottoni('2',false),new strutturabottoni('3',false),new strutturabottoni('+',false) },
-            {new strutturabottoni('±',false),new strutturabottoni('0',false),new strutturabottoni(',',false),new strutturabottoni('=',false) },
+            {new strutturabottoni('%',false,false),new strutturabottoni('ɶ',false,false),new strutturabottoni('c',false,false),new strutturabottoni('C',false,false) },
+            {new strutturabottoni(' ',false,false),new strutturabottoni(' ',false,false),new strutturabottoni(' ',false,false),new strutturabottoni('÷',false,false) },
+            {new strutturabottoni('7',true),new strutturabottoni('8',true),new strutturabottoni('9',true),new strutturabottoni('x',false) },
+            {new strutturabottoni('4',true),new strutturabottoni('5',true),new strutturabottoni('6',true),new strutturabottoni('-',false) },
+            {new strutturabottoni('1',true),new strutturabottoni('2',true),new strutturabottoni('3',true),new strutturabottoni('+',false) },
+            {new strutturabottoni('±',false,false,false,true),new strutturabottoni('0',true),new strutturabottoni(',',false,false,true),new strutturabottoni('=',false,false) },
 
         };
         public FormMain()
@@ -49,9 +55,9 @@ namespace Es_01_Calculator_Project
         private void FormMain_Load(object sender, EventArgs e)
         {
             Makebuttons(button);
-            MakeresultsBox(txt);
+            MakeresultsBox();
         }
-        private void MakeresultsBox(RichTextBox txt)
+        private void MakeresultsBox()
         {
             txt = new RichTextBox();
             txt.ReadOnly = true;
@@ -74,12 +80,15 @@ namespace Es_01_Calculator_Project
             {
                 for (int j = 0; j < bottoni.GetLength(1); j++)
                 {
+                    strutturabottoni bs = bottoni[i, j];
                     Button newbutton = new Button();
                     newbutton.Text = bottoni[i, j].Content.ToString();
                     newbutton.Width = buttonWidth;
                     newbutton.Height = buttonHeight;
                     newbutton.Left = posx;
                     newbutton.Top = posy;
+                    newbutton.Tag = bs;
+                    newbutton.Click += ButtonClick;
                     this.Controls.Add(newbutton);
                     posx += buttonWidth;
                 }
@@ -87,6 +96,42 @@ namespace Es_01_Calculator_Project
                 posy += buttonHeight;
 
             }
+        }
+
+        private void ButtonClick(object sender, EventArgs e)
+        {
+            Button thisbutton = (Button)sender;//casto perchè sono sicuro che sara un bottone per poi usare sempre e solo thisbutton
+                                               // MessageBox.Show("Button: " + thisbutton.Text);
+            strutturabottoni bs = (strutturabottoni)thisbutton.Tag;
+
+            if (bs.IsNumber)
+            {
+                if (txt.Text == "123456789")
+                    txt.Text = "";
+                txt.Text += thisbutton.Text;
+            }
+            else
+            {
+                if (bs.issepar)
+                {
+                    if(!txt.Text.Contains(bs.Content))
+                    {
+                        txt.Text += thisbutton.Text;
+                    }
+                }
+                else if(bs.ispls)
+                {
+                    if(!txt.Text.Contains("-"))
+                    {
+                        txt.Text = "-" + txt.Text;
+                    }
+                    else txt.Text = txt.Text.Substring(1);
+                }
+            }
+                
+
+
+
         }
     }
 }
