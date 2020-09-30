@@ -62,13 +62,43 @@ namespace Es_01_Calculator_Project
             txt = new RichTextBox();
             txt.ReadOnly = true;
             txt.SelectionAlignment = HorizontalAlignment.Right;
-            txt.Font = new Font("Segoe UI", 22);
+            txt.Font = new Font("Segoe UI", 22,FontStyle.Bold);
             txt.Width = this.Width - 16;
             txt.Height = 50;
             txt.Top = 20;
-            txt.Text = "123456789";
+            txt.Text = "0";
             this.Controls.Add(txt);
+            txt.TextChanged += resulstBox_TextCHang;
         }
+        private void resulstBox_TextCHang(object sender, EventArgs e)
+        {
+            int num = txt.Text.Length;
+            bool minus = txt.Text.Contains('-')?true:false;
+            if (minus)
+            {
+                if (num > 16)
+                    txt.Text = txt.Text.Remove(txt.Text.Length - 1);
+                else if (num > 13)
+                    txt.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                else if (num > 6)
+                    txt.Font = new Font("Segoe UI", 17, FontStyle.Bold);
+            }
+            else
+            {
+                if (num > 15)
+                    txt.Text = txt.Text.Remove(txt.Text.Length - 1);
+                else if (num > 13)
+                    txt.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                else if (num > 6)
+                    txt.Font = new Font("Segoe UI", 17, FontStyle.Bold);
+            }
+            
+
+
+
+
+        }
+
         private void Makebuttons(strutturabottoni[,] bottoni)
         {
             int buttonWidth = 78;
@@ -103,10 +133,10 @@ namespace Es_01_Calculator_Project
             Button thisbutton = (Button)sender;//casto perchè sono sicuro che sara un bottone per poi usare sempre e solo thisbutton
                                                // MessageBox.Show("Button: " + thisbutton.Text);
             strutturabottoni bs = (strutturabottoni)thisbutton.Tag;
-
+            
             if (bs.IsNumber)
             {
-                if (txt.Text == "123456789")
+                if (txt.Text == "0")
                     txt.Text = "";
                 txt.Text += thisbutton.Text;
             }
@@ -121,11 +151,31 @@ namespace Es_01_Calculator_Project
                 }
                 else if(bs.ispls)
                 {
-                    if(!txt.Text.Contains("-"))
+                    if (txt.Text != "0") 
                     {
-                        txt.Text = "-" + txt.Text;
+                        if (!txt.Text.Contains("-"))
+
+                            txt.Text = "-" + txt.Text;
+                        else txt.Text = txt.Text.Substring(1);
                     }
-                    else txt.Text = txt.Text.Substring(1);
+                    
+                }
+                else
+                {
+                    switch(bs.Content)
+                    {
+                        case 'c':
+                            txt.Text = "0";
+                            break;
+                        case 'C':
+                            if (txt.Text.Length == 1 || txt.Text == "-0,")
+                                txt.Text = "0";
+                            else
+                                txt.Text = txt.Text.Remove(txt.Text.Length - 1);
+                            break;
+                        default: break;
+                    }
+                        
                 }
             }
                 
