@@ -1,6 +1,6 @@
-﻿namespace Es_01_Calculator_Project
+﻿namespace Calculator_project
 {
-    partial class FormMain
+    partial class Calcolatrice
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -30,14 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // FormMain
+            // Calcolatrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 461);
-            this.Name = "FormMain";
+            this.ClientSize = new System.Drawing.Size(474, 621);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "Calcolatrice";
             this.Text = "Calcolatrice";
-            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.Load += new System.EventHandler(this.Calcolatrice_Load);
             this.ResumeLayout(false);
 
         }

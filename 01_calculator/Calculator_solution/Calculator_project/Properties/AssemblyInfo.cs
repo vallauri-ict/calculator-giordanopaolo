@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
-[assembly: AssemblyTitle("Es_01_Calculator_Project")]
+[assembly: AssemblyTitle("Calculator_project")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Es_01_Calculator_Project")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("Calculator_project")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Se il progetto viene esposto a COM, il GUID seguente verrà utilizzato come ID della libreria dei tipi
-[assembly: Guid("ee0c82b9-b19e-413c-ad6d-1aafd1583e96")]
+[assembly: Guid("c4f23c67-767f-4b3c-989a-42010ca68031")]
 
 // Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 //
