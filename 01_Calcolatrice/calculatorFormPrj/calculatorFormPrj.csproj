@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C4F23C67-767F-4B3C-989A-42010CA68031}</ProjectGuid>
+    <ProjectGuid>{9C24EFF3-C0E1-42D4-93CB-A0791E62C4CC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Calculator_project</RootNamespace>
-    <AssemblyName>Calculator_project</AssemblyName>
+    <RootNamespace>calculatorFormPrj</RootNamespace>
+    <AssemblyName>calculatorFormPrj</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calcolatrice.cs">
+    <Compile Include="formMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calcolatrice.Designer.cs">
-      <DependentUpon>Calcolatrice.cs</DependentUpon>
+    <Compile Include="formMain.Designer.cs">
+      <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Calcolatrice.resx">
-      <DependentUpon>Calcolatrice.cs</DependentUpon>
+    <EmbeddedResource Include="formMain.resx">
+      <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

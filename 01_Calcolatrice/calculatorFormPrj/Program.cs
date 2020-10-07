@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculator_project
+namespace calculatorFormPrj
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Calculator_project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calcolatrice());
+            Application.Run(new formMain());
         }
     }
 }
