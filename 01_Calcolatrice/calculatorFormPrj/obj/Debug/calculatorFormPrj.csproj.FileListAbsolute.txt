@@ -1,0 +1,10 @@
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\bin\Debug\calculatorFormPrj.exe.config
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\bin\Debug\calculatorFormPrj.exe
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\bin\Debug\calculatorFormPrj.pdb
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.csprojAssemblyReference.cache
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.formMain.resources
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.Properties.Resources.resources
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.csproj.GenerateResource.cache
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.csproj.CoreCompileInputs.cache
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.exe
+D:\Desktop\Scuola\videolesion\Pratica\01_Calcolatrice\calculatorFormPrj\obj\Debug\calculatorFormPrj.pdb
